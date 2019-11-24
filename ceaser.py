@@ -1,5 +1,7 @@
 # Caesar Cipher
 MAX_KEY_SIZE = 26
+
+# if he want to encrypt or decrypt
 def getMode():
     while True:
         print('Do you wish to encrypt or decrypt a message?')
@@ -9,10 +11,12 @@ def getMode():
         else:
             print('Enter either "encrypt" or "e" or "decrypt" or "d".')
 
+# get the message from the user
 def getMessage():
     print('Enter your message:')
     return input()
 
+# get the key used in the encryption
 def getKey():
     key = 0
     while True:
@@ -21,6 +25,7 @@ def getKey():
         if (key >= 1 and key <= MAX_KEY_SIZE):
             return key
 
+# get the encrypted / decrypted message
 def getTranslatedMessage(mode, message, key):
     if mode[0] == 'd':
         key = -key
@@ -44,6 +49,8 @@ def getTranslatedMessage(mode, message, key):
             translated += symbol
 
     return translated
+
+# call the functions, run them and get the output
 mode = getMode()
 message = getMessage()
 key = getKey()
